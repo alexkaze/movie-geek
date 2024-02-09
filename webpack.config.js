@@ -45,7 +45,7 @@ const plugins = [
       mode: 'write-references',
     },
   }),
-  new Dotenv(),
+  new Dotenv({ systemvars: true }),
 ];
 
 // Conditions
