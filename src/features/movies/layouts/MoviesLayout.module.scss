@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'mixins';
+
+.movies-layout {
+  display: grid;
+  gap: 3rem;
+  padding: 3rem;
+  opacity: 95%;
+  background-color: $background-color-main;
+
+  @include laptop() {
+    padding: 2rem;
+  }
+
+  @include tablet-l() {
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  @include mobile() {
+    padding: 2rem 1rem;
+    opacity: 90%;
+  }
+}

@@ -1,0 +1,65 @@
+@import 'variables';
+@import 'mixins';
+
+%arrow {
+  content: '';
+  display: block;
+  height: 0.2rem;
+  width: 1.5rem;
+  background-color: $background-color-main;
+
+  transition: all 0.2s ease;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+
+  &::before {
+    @extend %arrow;
+    left: -32%;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    @extend %arrow;
+    right: -32%;
+    transform: rotate(-45deg);
+  }
+}
+
+.up {
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+// Media
+@include laptop() {
+  %arrow {
+    height: 0.15rem;
+    width: 1.1rem;
+  }
+
+  .arrow {
+    &::before {
+      left: -11%;
+    }
+
+    &::after {
+      right: -11%;
+    }
+  }
+}

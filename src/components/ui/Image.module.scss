@@ -1,0 +1,49 @@
+@import 'variables';
+@import 'mixins';
+
+.image-container {
+  border-radius: $border-radius-rounded;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $border-radius-rounded;
+}
+
+.lazy {
+  background: linear-gradient(
+    to right,
+    rgba(127, 127, 127, 0.5) 30%,
+    rgba(162, 162, 162, 0.8) 70%
+  );
+  animation: loading 1s ease-in-out infinite alternate;
+
+  @keyframes loading {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@include mobile() {
+  .image-container {
+    height: 84%;
+  }
+
+  .img {
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+@include mobile-sm() {
+  .image-container {
+    height: 67%;
+  }
+}

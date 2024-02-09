@@ -1,0 +1,42 @@
+@import './variables';
+@import './mixins';
+@import './filters-variables';
+
+%filters-item-ui {
+  background-color: $background-color-filtersItem;
+  border-radius: $border-radius-filtersItem;
+}
+
+%filters-item-size {
+  padding: 1.1rem;
+
+  @include laptop() {
+    padding: 1rem 1rem;
+  }
+
+  @include tablet-l() {
+    padding: 0.9rem 1rem;
+  }
+
+  @include tablet-sm() {
+    padding: 1.5rem 1rem;
+  }
+}
+
+%filters-btn {
+  @extend %filters-item-size;
+  font-weight: weight(medium);
+  color: $font-color-main;
+  background-color: $background-color-fourth;
+  border-radius: $border-radius-filtersItem;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $background-color-fourth--hover;
+  }
+
+  &:active {
+    transform: scale(95%);
+  }
+}

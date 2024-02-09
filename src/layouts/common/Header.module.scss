@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: $background-color-main;
+
+  &__content {
+    width: 100%;
+    max-width: 160rem;
+    margin: 0 auto;
+  }
+
+  &__logo-link {
+    display: inline-block;
+  }
+
+  &__logo {
+    font-size: $font-size-logo;
+    font-weight: weight(extraBold);
+  }
+}
+
+// Media
+@include laptop() {
+  .header {
+    &__logo {
+      font-size: $font-size-logo--l;
+    }
+  }
+}
+
+@include tablet-l() {
+  .header {
+    padding: 0 1.5rem;
+
+    &__logo {
+      font-size: $font-size-logo--t;
+    }
+  }
+}
+
+@include tablet-sm() {
+  .header {
+    padding: 0 1rem;
+  }
+}
+
+@include mobile() {
+  .header {
+    &__logo {
+      font-size: $font-size-logo--m;
+    }
+  }
+}

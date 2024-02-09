@@ -1,0 +1,67 @@
+@import '../../scss/filters-extends';
+
+.filters {
+  display: grid;
+  align-items: center;
+  grid: 1fr / repeat(3, 1fr) 0.5fr;
+  gap: 5rem;
+  padding: 2rem;
+
+  font: inherit;
+  font-size: inherit;
+  background-color: $background-color-secondary;
+
+  &__btn {
+    @extend %filters-btn;
+  }
+}
+
+// Media
+@include laptop() {
+  .filters {
+    padding: 1.5rem;
+  }
+}
+
+@include tablet-sm() {
+  .filters {
+    grid: repeat(4, 1fr) / 1fr 1fr;
+    column-gap: 2rem;
+    width: 90%;
+    max-width: 50rem;
+    max-height: 50rem;
+    padding: 5rem;
+    background-color: darken($background-color-secondary, 10%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    animation: slide-down 200ms ease-out forwards;
+
+    @keyframes slide-down {
+      from {
+        opacity: 0;
+        transform: translate3d(-50%, -70%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+
+  .close {
+    animation: slide-up 200ms ease-out forwards;
+
+    @keyframes slide-up {
+      from {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+      }
+      to {
+        opacity: 0;
+        transform: translate3d(-50%, -70%, 0);
+      }
+    }
+  }
+}

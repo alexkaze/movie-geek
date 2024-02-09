@@ -1,0 +1,21 @@
+@import '../../scss/filters-extends';
+
+.option {
+  @extend %filters-item-size;
+  border-top: 0.1rem solid $border-select-option;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:first-child {
+    border: none;
+  }
+
+  &:hover {
+    background-color: $background-color-tertiary;
+  }
+}
+
+.selected {
+  font-weight: weight(semiBold);
+  background-color: $background-color-tertiary;
+}

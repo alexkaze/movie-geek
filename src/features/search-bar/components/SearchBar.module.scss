@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'extends';
+
+.search-bar {
+  @extend %flex-center;
+  height: 100%;
+
+  &__form {
+    @extend %flex-center;
+    justify-self: center;
+    width: 100%;
+    max-width: 64rem;
+    overflow: hidden;
+    border-radius: 10rem 15rem;
+  }
+
+  &__item {
+    padding: 1.2rem 3rem;
+  }
+
+  &__input {
+    color: $font-color-secondary;
+    background-color: $background-color-tertiary;
+    transition: background-color 0.2s ease;
+
+    &:focus {
+      background-color: $background-color-input--focus;
+    }
+  }
+
+  &__btn {
+    color: inherit;
+    background-color: $background-color-fourth;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background-color-fourth--hover;
+    }
+
+    &--disabled {
+      color: inherit;
+      background-color: $background-color-btn--disabled;
+    }
+  }
+}

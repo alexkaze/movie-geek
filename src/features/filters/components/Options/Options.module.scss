@@ -1,0 +1,70 @@
+@import '../../scss/filters-extends';
+
+.options {
+  @extend %filters-item-ui;
+  width: 100%;
+  min-width: 18rem;
+  max-height: 20rem;
+  overflow-y: scroll;
+
+  position: absolute;
+  top: 120%;
+  left: 0;
+  z-index: 100;
+
+  animation: popup 150ms ease-out forwards;
+
+  @keyframes popup {
+    from {
+      height: 0%;
+      opacity: 0;
+    }
+    to {
+      height: 20rem;
+      opacity: 100%;
+    }
+  }
+}
+
+.close {
+  animation: fade-away 150ms ease-out forwards;
+
+  @keyframes fade-away {
+    from {
+      height: 20rem;
+      opacity: 100%;
+    }
+    to {
+      height: 0%;
+      opacity: 0;
+    }
+  }
+}
+
+@include tablet-sm() {
+  .options {
+    max-height: 25rem;
+  }
+
+  @keyframes popup {
+    from {
+      height: 0%;
+      opacity: 0%;
+    }
+    to {
+      height: 25rem;
+      opacity: 100%;
+    }
+  }
+
+  @keyframes fade-away {
+    from {
+      height: 25rem;
+      opacity: 100%;
+    }
+    to {
+      height: 0%;
+      opacity: 0;
+    }
+  }
+}

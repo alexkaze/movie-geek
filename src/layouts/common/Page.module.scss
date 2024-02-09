@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'mixins';
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(auto, 128rem) minmax(
+      2rem,
+      1fr
+    );
+  grid-template-rows: 10rem 6rem auto 6rem;
+  grid-template-areas:
+    'header header header'
+    '. . .'
+    '. main .'
+    '. . .';
+
+  background: $background-page;
+
+  @include laptop() {
+    grid-template-rows: 7.5rem 6rem auto 6rem;
+  }
+
+  @include tablet-l() {
+    grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 128rem) minmax(
+        1.5rem,
+        1fr
+      );
+    grid-template-rows: 7rem 6rem auto 6rem;
+  }
+
+  @include tablet-sm() {
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 128rem) minmax(
+        1rem,
+        1fr
+      );
+    grid-template-rows: 6rem 4rem auto 4rem;
+  }
+}

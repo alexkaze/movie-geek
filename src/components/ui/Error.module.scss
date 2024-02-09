@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'extends';
+
+.error {
+  @extend %flex-center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-error;
+  font-weight: weight(bold);
+}

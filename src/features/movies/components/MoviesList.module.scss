@@ -1,0 +1,23 @@
+@import 'mixins';
+
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  grid-auto-rows: 30rem;
+  justify-content: space-between;
+  gap: 3rem 5rem;
+
+  @include desktop() {
+    gap: 3rem;
+  }
+
+  @include laptop() {
+    grid-auto-rows: 25rem;
+    gap: 3rem 2rem;
+  }
+
+  @include mobile() {
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    grid-auto-rows: 20rem;
+  }
+}

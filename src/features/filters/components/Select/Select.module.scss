@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'mixins';
+
+.select {
+  color: $font-color-secondary;
+  position: relative;
+}
+
+// Media
+@include tablet-sm() {
+  .select {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,9 @@
+.input {
+  font: inherit;
+  width: 100%;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}

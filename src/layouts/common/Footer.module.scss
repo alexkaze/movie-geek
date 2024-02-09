@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'extends';
+@import 'mixins';
+
+.footer {
+  @extend %flex-center;
+  height: 6rem;
+  font-size: $font-size-footer;
+  background-color: $background-color-main;
+
+  @include laptop() {
+    font-size: $font-size-footer--t;
+  }
+
+  @include tablet-sm() {
+    height: 5rem;
+  }
+}

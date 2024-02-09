@@ -1,0 +1,14 @@
+@import 'extends';
+@import '../../scss/filters-extends';
+
+.filters {
+  @extend %flex-center;
+  padding: 1rem;
+  color: $font-color-secondary;
+  background-color: $background-color-secondary;
+
+  &__btn {
+    @extend %filters-btn;
+    padding: 1rem 5rem;
+  }
+}
