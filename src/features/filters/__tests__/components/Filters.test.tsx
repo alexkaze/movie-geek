@@ -1,5 +1,3 @@
-import 'dotenv/config';
-
 import { screen } from '@testing-library/react';
 import { ReactNode, ReactPortal } from 'react';
 import ReactDOM from 'react-dom';
