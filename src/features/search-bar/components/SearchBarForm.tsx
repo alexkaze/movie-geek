@@ -24,11 +24,7 @@ const SearchBarForm = ({
       : styles['search-bar__btn--disabled'];
 
   return (
-    <form
-      data-testid="search-form"
-      className={styles['search-bar__form']}
-      onSubmit={searchMovieHandler}
-    >
+    <form className={styles['search-bar__form']} onSubmit={searchMovieHandler}>
       <Input
         refValue={refInput}
         className={`${styles['search-bar__item']} ${styles['search-bar__input']}`}
