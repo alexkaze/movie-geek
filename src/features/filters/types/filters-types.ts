@@ -1,42 +1,16 @@
-type FetchedFilterCountryItem = {
-  id: number;
-  country: string;
-};
-
-type FetchedFilterGenreItem = {
-  id: number;
-  genre: string;
-};
-
-export type FetchedFiltersData = {
-  countries: FetchedFilterCountryItem[];
-  genres: FetchedFilterGenreItem[];
-};
-
-type FetchedFilterItem = FetchedFilterCountryItem | FetchedFilterGenreItem;
-
-export type FetchedFilter = FetchedFilterItem[];
-
-export type FilterItems = {
-  id: string;
-  item: string;
-}[];
-
-export type FilterYears = (string | string[])[];
+export type FilterItems = string[];
 
 export type ReturnedFiltersValue = {
   сountries: FilterItems;
   genres: FilterItems;
+  years: FilterItems;
 };
 
-export type SelectTitle = string;
-export type SelectParam = string;
-export type SelectedOption = string | string[];
-export type SelectDataArr = FilterItems | FilterYears;
+export type SelectedOption = string | null;
 
 export type SelectType = {
-  title: SelectTitle;
-  param: SelectParam;
+  title: string;
+  param: string;
   selectedOption: SelectedOption;
-  dataArr: SelectDataArr;
+  dataArr: FilterItems;
 };

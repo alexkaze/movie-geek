@@ -15,13 +15,13 @@ const fetchFilters = createAsyncThunk<
 
     if (!response.ok)
       throw new Error(
-        `Ошибка ${response.status}: ${errorMessage(response.status)}`
+        `Ошибка ${response.status}: ${errorMessage(response.status)}`,
       );
 
-    const { сountries, genres } =
+    const { сountries, genres, years } =
       (await response.json()) as ReturnedFiltersValue;
 
-    return { сountries, genres };
+    return { сountries, genres, years };
   } catch (err) {
     return rejectWithValue((err as Error).message);
   }

@@ -1,19 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { FilterItems, FilterYears } from '../types/filters-types';
-
 import initialFilters from './initial-state';
 import fetchFilters from './fetch-filters';
 
-type InitialState = {
-  сountries: FilterItems;
-  genres: FilterItems;
-  years: FilterYears;
-  status: string;
-  error: string;
-};
-
-const initialState: InitialState = {
+const initialState = {
   сountries: initialFilters.сountries,
   genres: initialFilters.genres,
   years: initialFilters.years,
@@ -34,6 +24,7 @@ const filtersSlice = createSlice({
       .addCase(fetchFilters.fulfilled, (state, action) => {
         state.сountries = action.payload.сountries;
         state.genres = action.payload.genres;
+        state.years = action.payload.years;
       })
       .addCase(fetchFilters.rejected, (state, action) => {
         state.status = 'rejected';
