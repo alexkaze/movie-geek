@@ -36,13 +36,8 @@ export const testReturnedMoviesData: ReturnedMoviesValue = {
   movies: testMoviesData,
 };
 
-export const testtestReturnedMoviesData: ReturnedFiltersValue = {
-  сountries: [
-    { id: '1', item: 'США' },
-    { id: '2', item: 'Франция' },
-  ],
-  genres: [
-    { id: '1', item: 'триллер' },
-    { id: '2', item: 'драма' },
-  ],
+export const testReturnedFiltersData: ReturnedFiltersValue = {
+  сountries: ['США', 'Франция'],
+  genres: ['триллер', 'драма'],
+  years: ['2022', '2017-2021'],
 };

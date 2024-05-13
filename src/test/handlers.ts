@@ -4,7 +4,7 @@ import { API_URL, PATH_SEARCH, PATH_FILTERS } from '@config/env-config';
 
 import {
   testReturnedMoviesData,
-  testtestReturnedMoviesData,
+  testReturnedFiltersData,
 } from './test-fetched-data';
 
 export const handlers = [
@@ -12,14 +12,14 @@ export const handlers = [
     res(
       ctx.delay(100),
       ctx.status(200),
-      ctx.json({ ...testReturnedMoviesData })
-    )
+      ctx.json({ ...testReturnedMoviesData }),
+    ),
   ),
   rest.get(`${API_URL}${PATH_FILTERS}`, (_, res, ctx) =>
     res(
       ctx.delay(100),
       ctx.status(200),
-      ctx.json({ ...testtestReturnedMoviesData })
-    )
+      ctx.json({ ...testReturnedFiltersData }),
+    ),
   ),
 ];
