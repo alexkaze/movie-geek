@@ -2,12 +2,13 @@ import { useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import useUrlNavigation from '@services/useUrlService';
+import { URL_PARAMS } from '@config/url-params';
 
 const useSearchBarService = () => {
   const [searchParams] = useSearchParams();
   const { navigateToSearch } = useUrlNavigation();
 
-  const urlKeyword = searchParams.get('keyword');
+  const urlKeyword = searchParams.get(URL_PARAMS.keyword);
   const [keyword, setKeyword] = useState(urlKeyword || '');
   const refInput = useRef<HTMLInputElement>(null);
 
