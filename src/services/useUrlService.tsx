@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
 import { PATH_SEARCH } from '@config/env-config';
-
-const paramsOrder = ['keyword', 'countries', 'genres', 'yearFrom', 'yearTo'];
+import { URL_PARAMS, URL_PARAMS_ORDER } from '@config/url-params';
 
 const useUrlService = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -11,33 +10,33 @@ const useUrlService = () => {
 
   const navigateToSearch = useCallback(
     (keyword: string) =>
-      navigate(`${PATH_SEARCH}?keyword=${keyword}`, { replace: false }),
-    [navigate]
+      navigate(`${PATH_SEARCH}?${URL_PARAMS.keyword}=${keyword}`, {
+        replace: false,
+      }),
+    [navigate],
   );
 
   const updateFiltersParams = useCallback(
     (newFiltersParams: URLSearchParams) => {
-      searchParams.delete('page');
+      searchParams.delete(URL_PARAMS.page);
 
-      const urlParams = paramsOrder
-        .map(param =>
-          newFiltersParams.has(param)
-            ? `${param}=${newFiltersParams.get(param)}`
-            : ''
-        )
-        .join('&');
+      const urlParams = URL_PARAMS_ORDER.map(param =>
+        newFiltersParams.has(param)
+          ? `${param}=${newFiltersParams.get(param)}`
+          : '',
+      ).join('&');
 
       setSearchParams(urlParams);
     },
-    [searchParams, setSearchParams]
+    [searchParams, setSearchParams],
   );
 
   const resetFiltersParams = useCallback(() => {
-    searchParams.delete('countries');
-    searchParams.delete('genres');
-    searchParams.delete('yearFrom');
-    searchParams.delete('yearTo');
-    searchParams.delete('page');
+    searchParams.delete(URL_PARAMS.country);
+    searchParams.delete(URL_PARAMS.genre);
+    searchParams.delete(URL_PARAMS.year);
+    searchParams.delete(URL_PARAMS.page);
+
     setSearchParams(searchParams);
   }, [searchParams, setSearchParams]);
 
