@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { InitialStoreState } from '../types/movies-types';
-
 import initialMoviesArr from './initial-state';
 import fetchMovies from './fetch-movies';
 
-const initialState: InitialStoreState = {
+const initialState = {
   movies: initialMoviesArr,
   pagesQty: 0,
   status: 'idle',

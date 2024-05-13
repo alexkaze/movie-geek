@@ -1,5 +1,3 @@
-import initialMoviesArr from '../store/initial-state';
-
 export type MovieData = {
   kinopoiskId: number;
   imdbId: number;
@@ -17,13 +15,6 @@ export type MoviesData = {
   id: string;
   data: MovieData;
 }[];
-
-export type InitialStoreState = {
-  movies: typeof initialMoviesArr | MoviesData;
-  pagesQty: number;
-  status: string;
-  error: string;
-};
 
 export type FetchedMoviesData = {
   pages: number;
