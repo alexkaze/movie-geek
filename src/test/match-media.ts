@@ -1,4 +1,4 @@
-export const matchMedia = (matches: boolean) => {
+const matchMedia = (matches: boolean) => {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
     value: jest.fn().mockImplementation((query: string) => ({
@@ -11,3 +11,5 @@ export const matchMedia = (matches: boolean) => {
     })),
   });
 };
+
+export default matchMedia;

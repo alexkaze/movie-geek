@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { handlers } from '@test/handlers';
 
-import { matchMedia } from '@test/matchMedia';
+import matchMedia from '@test/match-media';
 import { store } from '@store/store';
 
 const server = setupServer(handlers[1]);
@@ -18,7 +18,7 @@ afterAll(() => server.close());
 export const ProviderTestRender = (
   ui: JSX.Element,
   media: 'desktop' | 'mobile',
-  route: string = '/'
+  route: string = '/',
 ) => {
   if (media === 'desktop') matchMedia(false);
   if (media === 'mobile') matchMedia(true);
@@ -30,7 +30,7 @@ export const ProviderTestRender = (
     ...render(
       <Provider store={store}>
         <MemoryRouter initialEntries={[route]}>{ui}</MemoryRouter>
-      </Provider>
+      </Provider>,
     ),
   };
 };
