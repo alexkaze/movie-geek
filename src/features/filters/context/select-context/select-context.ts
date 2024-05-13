@@ -17,24 +17,6 @@ type SelectState = {
   };
 };
 
-const SelectContext = createContext<SelectState>({
-  selectData: {
-    title: 'Страна',
-    selectedOption: '1',
-    param: 'countries',
-    dataArr: [],
-  },
-  selectState: {
-    isDisplayed: false,
-    shouldRender: false,
-    paramIsEmpty: false,
-    selectedOptionUI: 'Страна',
-  },
-  selectHandlers: {
-    hideListHandler: () => {},
-    toggleListHandler: () => {},
-    animationEndHandler: () => {},
-  },
-});
+const SelectContext = createContext<SelectState | null>(null);
 
 export default SelectContext;

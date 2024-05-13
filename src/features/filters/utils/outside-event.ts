@@ -2,7 +2,7 @@ const outsideEvent = (
   btnClass: string,
   btnEl: HTMLDivElement,
   isDisplayed: boolean,
-  hideList: () => void
+  hideList: () => void,
 ) => {
   if (!isDisplayed) return;
 

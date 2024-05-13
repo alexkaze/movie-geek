@@ -5,12 +5,11 @@ type Props = {
 };
 
 const SelectArrow = ({ isDisplayed }: Props) => {
-  return (
-    <div
-      data-testid="select-arrow"
-      className={`${styles.arrow} ${isDisplayed ? `${styles.up}` : ''}`}
-    ></div>
-  );
+  const classes = isDisplayed
+    ? `${styles.arrow} ${styles.up}`
+    : `${styles.arrow}`;
+
+  return <div data-testid="select-arrow" className={classes}></div>;
 };
 
 export default SelectArrow;

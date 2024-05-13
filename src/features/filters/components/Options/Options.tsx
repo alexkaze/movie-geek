@@ -1,16 +1,12 @@
-import { useContext } from 'react';
-
-import { FilterItems, FilterYears } from '../../types/filters-types';
-import SelectContext from '../../context/select-context/select-context';
+import useGetSelectContext from '@features/filters/context/select-context/useGetSelectContext';
 
 import DefaultOption from './DefaultOption';
-import OptionsListCommon from './OptionsListCommon';
-import OptionsListYears from './OptionsListYears';
+import OptionsList from './OptionsList';
 
 import styles from './Options.module.scss';
 
 const Options = () => {
-  const { selectData, selectState, selectHandlers } = useContext(SelectContext);
+  const { selectData, selectState, selectHandlers } = useGetSelectContext();
 
   const { selectedOption, param, dataArr } = selectData;
   const { isDisplayed, shouldRender, paramIsEmpty } = selectState;
@@ -25,18 +21,7 @@ const Options = () => {
       onAnimationEnd={animationEndHandler}
     >
       <DefaultOption paramIsEmpty={paramIsEmpty} />
-
-      {param !== 'years' ? (
-        <OptionsListCommon
-          selectedOption={selectedOption as string}
-          dataArr={dataArr as FilterItems}
-        />
-      ) : (
-        <OptionsListYears
-          selectedOption={selectedOption as string[]}
-          dataArr={dataArr as FilterYears}
-        />
-      )}
+      <OptionsList selectedOption={selectedOption} dataArr={dataArr} />
     </ul>
   ) : (
     <></>

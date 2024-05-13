@@ -19,12 +19,12 @@ type FiltersUI = {
 type FiltersUrl = {
   selectOption: (
     e: React.MouseEvent<Element, MouseEvent>,
-    refCurrent: HTMLDivElement | null
+    refCurrent: HTMLDivElement,
   ) => void;
   resetFilters: () => void;
 };
 
-export type FiltersContextType = {
+type FiltersContextType = {
   filtersData: FiltersData;
   filtersUI: FiltersUI;
   filtersUrl: FiltersUrl;

@@ -1,51 +1,45 @@
-import { FILTERS_DATA_PARAMS } from '@features/filters/config/filters-config';
-
+import { FilterItems } from '@features/filters/types/filters-types';
 import {
-  SelectType,
-  FilterItems,
-  FilterYears,
-} from '@features/filters/types/filters-types';
+  FILTERS_TITLES,
+  FILTERS_PARAMS,
+} from '@features/filters/config/filters-config';
 
-import createFilterObject from '../utils/createFilterObject';
+import createFilterObject from '../utils/create-filter-object';
 
 import useGetFiltersUrlParams from './useGetFiltersUrlParams';
 
 const useConfigFilters = (
   сountries: FilterItems,
   genres: FilterItems,
-  years: FilterYears
+  years: FilterItems,
 ) => {
-  const { selectedCountry, selectedGenre, selectedYearFrom, selectedYearTo } =
+  const { selectedCountry, selectedGenre, selectedYear } =
     useGetFiltersUrlParams();
 
-  const countriesFilter: SelectType = createFilterObject(
-    'Страна',
-    FILTERS_DATA_PARAMS.countries,
+  const countriesFilter = createFilterObject(
+    FILTERS_TITLES.country,
+    FILTERS_PARAMS.country,
     selectedCountry,
-    сountries
+    сountries,
   );
 
-  const genresFilter: SelectType = createFilterObject(
-    'Жанр',
-    FILTERS_DATA_PARAMS.genres,
+  const genresFilter = createFilterObject(
+    FILTERS_TITLES.genre,
+    FILTERS_PARAMS.genre,
     selectedGenre,
-    genres
+    genres,
   );
 
-  const yearsFilter: SelectType = createFilterObject(
-    'Год',
-    FILTERS_DATA_PARAMS.years,
-    [selectedYearFrom, selectedYearTo],
-    years
+  const yearsFilter = createFilterObject(
+    FILTERS_TITLES.year,
+    FILTERS_PARAMS.year,
+    selectedYear,
+    years,
   );
 
   const filters = [countriesFilter, genresFilter, yearsFilter];
 
-  const canBeReseted =
-    !!+selectedCountry ||
-    !!+selectedGenre ||
-    !!+selectedYearFrom ||
-    !!+selectedYearTo;
+  const canBeReseted = !!selectedCountry || !!selectedGenre || !!selectedYear;
 
   return {
     filters,

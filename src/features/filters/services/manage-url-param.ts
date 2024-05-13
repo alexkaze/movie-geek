@@ -1,7 +1,7 @@
-const checkNonYearsParam = (
+const manageUrlParam = (
   searchParams: URLSearchParams,
   eventTarget: EventTarget,
-  param: string
+  param: string,
 ) => {
   const selectedOption = (
     (eventTarget as Element)?.closest('li') as HTMLElement
@@ -11,4 +11,4 @@ const checkNonYearsParam = (
   if (selectedOption) searchParams.set(param, selectedOption);
 };
 
-export default checkNonYearsParam;
+export default manageUrlParam;

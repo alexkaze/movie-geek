@@ -9,11 +9,7 @@ import SelectButton from './SelectButton';
 
 import styles from './Select.module.scss';
 
-type Props = {
-  selectObjData: SelectType;
-};
-
-const Select = ({ selectObjData }: Props) => {
+const Select = ({ selectObjData }: { selectObjData: SelectType }) => {
   return (
     <SelectProvider selectObjData={selectObjData}>
       <RoundedBlock className={styles.select}>

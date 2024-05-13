@@ -1,4 +1,4 @@
-import createFilterObject from '@features/filters/utils/createFilterObject';
+import createFilterObject from '@features/filters/utils/create-filter-object';
 
 import { testCountriesData } from '../filters-test-data';
 
@@ -6,12 +6,12 @@ describe('createFilterObject function', () => {
   test('returns correct object', () => {
     const mockFn = jest.fn(createFilterObject);
 
-    mockFn('Страна', 'countries', '1', testCountriesData);
+    mockFn('Страна', 'country', 'США', testCountriesData);
 
     expect(mockFn).toHaveReturnedWith({
       title: 'Страна',
-      param: 'countries',
-      selectedOption: '1',
+      param: 'country',
+      selectedOption: 'США',
       dataArr: testCountriesData,
     });
   });

@@ -1,7 +1,7 @@
-import { SelectType, FilterItems } from '@features/filters/types/filters-types';
+import { SelectType } from '@features/filters/types/filters-types';
 import useDisplayAnimation from '@features/filters/hooks/useDisplayAnimation';
 
-import checkSelectedOption from './checkSelectedOption';
+import validateOption from './validate-option';
 
 import SelectContext from './select-context';
 
@@ -16,11 +16,7 @@ const SelectProvider = ({ selectObjData, children }: Props) => {
 
   const { title, param, selectedOption, dataArr } = { ...selectObjData };
 
-  const { paramIsEmpty, selectedOptionUI } = checkSelectedOption(
-    param,
-    selectedOption,
-    dataArr as FilterItems
-  );
+  const { paramIsEmpty, selectedOptionUI } = validateOption(selectedOption);
 
   const hideListHandler = () => displayHandler(false);
   const toggleListHandler = () => displayHandler(!isDisplayed);

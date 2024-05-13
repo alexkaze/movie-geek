@@ -1,7 +1,4 @@
-const checkSelectedFilter = (
-  eventTarget: EventTarget,
-  filterEl: HTMLDivElement | null
-) => {
+const validateFilter = (eventTarget: EventTarget, filterEl: HTMLDivElement) => {
   const param = ((eventTarget as Element)?.closest('ul') as HTMLElement)
     ?.dataset?.param;
 
@@ -13,4 +10,4 @@ const checkSelectedFilter = (
   return false;
 };
 
-export default checkSelectedFilter;
+export default validateFilter;

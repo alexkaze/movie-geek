@@ -1,7 +1,7 @@
-import { useContext, useRef } from 'react';
+import { useRef } from 'react';
 
-import SelectContext from '@features/filters/context/select-context/select-context';
-import outsideEvent from '@features/filters/utils/outsideEvent';
+import useGetSelectContext from '@features/filters/context/select-context/useGetSelectContext';
+import outsideEvent from '@features/filters/utils/outside-event';
 
 import SelectArrow from './SelectArrow';
 
@@ -9,7 +9,7 @@ import styles from './SelectButton.module.scss';
 
 const SelectButton = () => {
   const refSelectBtn = useRef<HTMLDivElement>(null);
-  const { selectData, selectState, selectHandlers } = useContext(SelectContext);
+  const { selectData, selectState, selectHandlers } = useGetSelectContext();
 
   const { title } = selectData;
   const { isDisplayed, paramIsEmpty, selectedOptionUI } = selectState;

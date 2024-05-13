@@ -1,9 +1,7 @@
 import { useRef } from 'react';
 
 import useGetFiltersContext from '@features/filters/context/filters-context/useGetFiltersContext';
-
 import useMatchMedia from '@hooks/useMatchMedia';
-
 import RoundedBlock from '@components/ui/RoundedBlock';
 import Button from '@components/common/Button';
 
@@ -32,7 +30,7 @@ const FiltersPanel = () => {
       className={
         isDisplayed ? styles.filters : `${styles.filters} ${styles.close}`
       }
-      onClick={e => selectOptionHandler(e, refFilter.current)}
+      onClick={e => selectOptionHandler(e, refFilter.current!)}
       onAnimationEnd={animationEndHandler}
     >
       {filters.map(select => (
