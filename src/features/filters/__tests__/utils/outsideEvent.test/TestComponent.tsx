@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import outsideEvent from '@features/filters/utils/outsideEvent';
+import outsideEvent from '@features/filters/utils/outside-event';
 
 const TestComponent = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);

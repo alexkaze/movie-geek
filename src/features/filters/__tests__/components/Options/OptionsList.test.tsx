@@ -1,22 +1,18 @@
 import { render, screen } from '@testing-library/react';
 
-import OptionsListCommon from '@features/filters/components/Options/OptionsListCommon';
+import OptionsList from '@features/filters/components/Options/OptionsList';
 import { testCountriesData } from '@features/filters/__tests__/filters-test-data';
 
-describe('OptionsListCommon component', () => {
+describe('OptionsList component', () => {
   test('renders as default (without selected option)', () => {
-    render(
-      <OptionsListCommon selectedOption={'0'} dataArr={testCountriesData} />
-    );
+    render(<OptionsList selectedOption={null} dataArr={testCountriesData} />);
 
     expect(screen.getByText('США')).toBeInTheDocument();
     expect(screen.getByText('Франция')).toBeInTheDocument();
   });
 
   test('renders with selectedOption=США', () => {
-    render(
-      <OptionsListCommon selectedOption={'1'} dataArr={testCountriesData} />
-    );
+    render(<OptionsList selectedOption={'США'} dataArr={testCountriesData} />);
 
     const options = screen.getAllByTestId('option');
 

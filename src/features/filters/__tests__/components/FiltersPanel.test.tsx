@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 
 import FiltersService from '@features/filters/services/FiltersService';
 import FiltersProvider from '@features/filters/context/filters-context/FiltersProvider';
+import FiltersMedia from '@features/filters/components/FiltersMedia/FiltersMedia';
 import FiltersPanel from '@features/filters/components/FiltersPanel/FiltersPanel';
 import { ProviderTestRender } from '@test/ProviderTestRender';
-import FiltersMedia from '@features/filters/components/FiltersMedia/FiltersMedia';
 
 const configUI = (ver = 'desktop') => {
   return (
@@ -18,8 +18,7 @@ const configUI = (ver = 'desktop') => {
   );
 };
 
-const testRoute =
-  '/search?keyword=тест&countries=1&genres=2&yearFrom=2010&yearTo=2016';
+const testRoute = '/search?keyword=тест&country=США&genre=драма&year=2010-2016';
 
 describe('Filters component', () => {
   // Desktop
@@ -40,14 +39,14 @@ describe('Filters component', () => {
 
       expect(await screen.findByText('США')).toBeInTheDocument();
       expect(await screen.findByText('драма')).toBeInTheDocument();
-      expect(await screen.findByText('2010 - 2016')).toBeInTheDocument();
+      expect(await screen.findByText('2010-2016')).toBeInTheDocument();
     });
 
     test('reset selected options', async () => {
       const { user } = ProviderTestRender(
         configUI(version),
         version,
-        testRoute
+        testRoute,
       );
 
       await user.click(screen.getByText('Сбросить'));
