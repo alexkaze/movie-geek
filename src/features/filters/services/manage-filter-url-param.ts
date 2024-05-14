@@ -1,4 +1,4 @@
-const manageUrlParam = (
+const manageFilterUrlParam = (
   searchParams: URLSearchParams,
   eventTarget: EventTarget,
   param: string,
@@ -11,4 +11,4 @@ const manageUrlParam = (
   if (selectedOption) searchParams.set(param, selectedOption);
 };
 
-export default manageUrlParam;
+export default manageFilterUrlParam;

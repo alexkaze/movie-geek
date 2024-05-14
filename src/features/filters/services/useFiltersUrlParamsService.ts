@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import useUrlService from '@services/useUrlService';
 
-import manageUrlParam from './manage-url-param';
+import manageFilterUrlParam from './manage-filter-url-param';
 
 const useFiltersUrlParamsService = () => {
   const { resetFiltersParams, updateFiltersParams } = useUrlService();
@@ -11,7 +11,7 @@ const useFiltersUrlParamsService = () => {
 
   const updateParams = useCallback(
     (eventTarget: EventTarget, param: string) => {
-      manageUrlParam(searchParams, eventTarget, param);
+      manageFilterUrlParam(searchParams, eventTarget, param);
       updateFiltersParams(searchParams);
     },
     [searchParams, updateFiltersParams],
