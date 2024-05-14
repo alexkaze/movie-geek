@@ -163,6 +163,7 @@ module.exports = {
       path.resolve(__dirname, 'src/features/filters/scss'),
       path.resolve(__dirname, 'src/features/movies/scss'),
       path.resolve(__dirname, 'src/features/pagination/scss'),
+      path.resolve(__dirname, 'src/features/search-bar/scss'),
       'node_modules',
     ],
   },
