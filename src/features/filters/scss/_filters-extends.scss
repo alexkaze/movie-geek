@@ -1,6 +1,6 @@
-@import './variables';
-@import './mixins';
-@import './filters-variables';
+@import 'filters-variables';
+@import 'variables';
+@import 'mixins';
 
 %filters-item-ui {
   background-color: $background-color-filtersItem;

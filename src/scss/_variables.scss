@@ -10,17 +10,6 @@ $font-size-logo: 5rem;
 $font-size-logo--l: 3.8rem;
 $font-size-logo--t: 3rem;
 $font-size-logo--m: 2rem;
-$font-size-movie-title: 1.8rem;
-$font-size-movie-title--l: 1.6rem;
-$font-size-movie-title--m: 1.3rem;
-$font-size-movie-content: 1.5rem;
-$font-size-movie-content--l: 1.3rem;
-$font-size-movie-content--m: 1.2rem;
-$font-size-movie-label--l: 1.4rem;
-$font-size-movie-label--m: 1.2rem;
-$font-size-pagination-arrow: 3rem;
-$font-size-pagination-arrow--t: 2.5rem;
-$font-size-pagination-arrow--t-sm: 2rem;
 $font-size-footer: 2rem;
 $font-size-footer--t: 1.6rem;
 $font-size-error: 1.95rem;
@@ -42,7 +31,8 @@ $font-weight: (
 }
 
 // UI
-$background-page: conic-gradient(
+$background-page:
+  conic-gradient(
     at 0% 30%,
     rgba(97, 83, 83, 0.8) 10%,
     rgba(150, 150, 119, 0.8) 30%,
@@ -58,22 +48,7 @@ $background-color-tertiary: #fff;
 $background-color-fourth: #784949;
 $background-color-fourth--hover: lighten($background-color-fourth, 5);
 
-$background-color-moviePattern: rgba(75, 75, 75, 0.3);
-
-$color-movieLink-kinopoisk: #ec8200;
-$color-movieLink-kinopoisk--hover: #ffad48;
-$color-movieLink-imdb: #f6c700;
-$color-movieLink-imdb--hover: #ffe46d;
-
 $background-color-backdrop: rgba(0, 0, 0, 0.75);
-
-$color-navPage: #fff;
-$color-navPage--hover: rgb(194, 194, 194);
-$background-color-navPageItem--active: rgba(156, 131, 54, 0.8);
-$border-radius-navPage: 50%;
-
-$background-color-input--focus: rgb(224, 222, 198);
-$background-color-btn--disabled: #878787;
 
 $border-radius-rounded: 1.5rem;
 
