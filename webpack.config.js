@@ -57,7 +57,7 @@ if (process.env.MODE === 'production') {
   optimization.minimizer.push(
     new TerserPlugin({
       test: /\.js(\?.*)?$/i,
-    })
+    }),
   );
 
   optimization.runtimeChunk = 'single';
@@ -77,7 +77,7 @@ if (process.env.MODE === 'production') {
     // for netlify deploy
     new CopyPlugin({
       patterns: [{ from: './_redirects', to: './' }],
-    })
+    }),
   );
 }
 
@@ -158,7 +158,13 @@ module.exports = {
     },
 
     extensions: ['.tsx', '.ts', '.js'],
-    modules: [path.resolve(__dirname, 'src/scss'), 'node_modules'],
+    modules: [
+      path.resolve(__dirname, 'src/scss'),
+      path.resolve(__dirname, 'src/features/filters/scss'),
+      path.resolve(__dirname, 'src/features/movies/scss'),
+      path.resolve(__dirname, 'src/features/pagination/scss'),
+      'node_modules',
+    ],
   },
 
   devServer: {
@@ -166,7 +172,6 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     hot: true,
-    open: true,
     historyApiFallback: true,
   },
 };
