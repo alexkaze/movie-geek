@@ -19,7 +19,7 @@ describe('SearchBar', () => {
     ProviderTestRender(<SearchBar />, 'desktop');
 
     expect(
-      screen.getByPlaceholderText(/фильмы, сериалы, тв-шоу.../i)
+      screen.getByPlaceholderText(/фильмы, сериалы, тв-шоу.../i),
     ).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /поиск/i })).toBeInTheDocument();
   });
@@ -28,12 +28,12 @@ describe('SearchBar', () => {
     ProviderTestRender(<SearchBar />, 'desktop');
 
     const input: HTMLInputElement = screen.getByPlaceholderText(
-      /фильмы, сериалы, тв-шоу.../i
+      /фильмы, сериалы, тв-шоу.../i,
     );
 
     expect(input.value).toBe('');
     expect(screen.getByRole('button', { name: /поиск/i })).toHaveClass(
-      'search-bar__item search-bar__btn--disabled'
+      'searchbar__item searchbar__btn--disabled',
     );
   });
 
@@ -43,13 +43,13 @@ describe('SearchBar', () => {
     render(<SearchBar />, { wrapper: BrowserRouter });
 
     const input: HTMLInputElement = screen.getByPlaceholderText(
-      /фильмы, сериалы, тв-шоу.../i
+      /фильмы, сериалы, тв-шоу.../i,
     );
     await user.type(input, 'Movie');
 
     expect(input.value).toBe('Movie');
     expect(screen.getByRole('button', { name: /поиск/i })).toHaveClass(
-      'search-bar__item search-bar__btn'
+      'searchbar__item searchbar__btn',
     );
   });
 
@@ -57,7 +57,7 @@ describe('SearchBar', () => {
     const { user } = ProviderTestRender(<SearchBar />, 'desktop');
 
     const input: HTMLInputElement = screen.getByPlaceholderText(
-      /фильмы, сериалы, тв-шоу.../i
+      /фильмы, сериалы, тв-шоу.../i,
     );
 
     await user.type(input, 'Movie');
