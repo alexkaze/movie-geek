@@ -1,19 +1,22 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { PATH_SEARCH } from '@config/env-config';
+import { PATH_SEARCH, PATH_TOP250, PATH_POPULAR } from '@config/env-config';
 
 import Layout from './layouts/common/Layout';
 
-const Main = React.lazy(() => import('./pages/Main'));
-const Search = React.lazy(() => import('./pages/Search'));
+const MainPage = React.lazy(() => import('./pages/MainPage'));
+const SearchMoviesPage = React.lazy(() => import('./pages/SearchMoviesPage'));
+const MoviesPage = React.lazy(() => import('./pages/MoviesPage'));
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Main />} />
-        <Route path={PATH_SEARCH} element={<Search />} />
+        <Route index element={<MainPage />} />
+        <Route path={PATH_SEARCH} element={<SearchMoviesPage />} />
+        <Route path={PATH_TOP250} element={<MoviesPage />} />
+        <Route path={PATH_POPULAR} element={<MoviesPage />} />
       </Route>
     </Routes>
   );
