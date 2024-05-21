@@ -1,6 +1,4 @@
-import { useLocation } from 'react-router-dom';
-
-import useGetPages from '../services/useGetPages';
+import usePaginationService from '../services/usePaginationService';
 
 import PaginationContext from './pagination-context';
 
@@ -9,15 +7,14 @@ type Props = {
 };
 
 const PaginationProvider = ({ children }: Props) => {
-  const { pagesQty, activePage, pagesArr, pageClickHandler } = useGetPages();
-  const cleanParams = useLocation().search.replace(/&page.*/i, '');
+  const { pagesQty, activePage, pagesArr, pageClickHandler } =
+    usePaginationService();
 
   const context = {
     pagesQty,
     activePage,
     pagesArr,
-    cleanParams,
-    pageClickHandler,
+    pageClickHandler
   };
 
   return (

@@ -1,0 +1,30 @@
+@import 'pagination-variables';
+@import 'extends';
+@import 'mixins';
+
+.page {
+  @extend %flex-center;
+  width: 3.6rem;
+  height: 3.6rem;
+  cursor: pointer;
+  border-radius: $border-radius-navpage;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-navpage--hover;
+  }
+
+  &--active {
+    background-color: $background-color-navpage--active;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+// Media
+@include tablet-l() {
+  .page {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

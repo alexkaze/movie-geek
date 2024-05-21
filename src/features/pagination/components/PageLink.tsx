@@ -1,28 +1,15 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import styles from './PageLink.module.scss';
 
-import PaginationContext from '../context/pagination-context';
-
-import styles from './Pagination.module.scss';
-
-type Props = {
-  page: string | number;
-};
-
-const PageLink = ({ page }: Props) => {
-  const { activePage, cleanParams } = useContext(PaginationContext);
-
+const PageLink = ({ page, isActive }: { page: number; isActive: boolean }) => {
   return (
-    <Link
-      to={
-        page === activePage
-          ? cleanParams + `&page=${activePage}`
-          : cleanParams + `&page=${page}`
+    <span
+      data-value={page}
+      className={
+        isActive ? `${styles.page} ${styles['page--active']}` : styles.page
       }
-      className={page === activePage ? styles['page--active'] : styles.page}
     >
       {page}
-    </Link>
+    </span>
   );
 };
 

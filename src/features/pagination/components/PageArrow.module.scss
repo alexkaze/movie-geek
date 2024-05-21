@@ -1,0 +1,26 @@
+@import 'pagination-variables';
+@import 'extends';
+@import 'mixins';
+
+.arrow {
+  font-size: $font-size-pagination-arrow;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-navpage--hover;
+  }
+
+  &--hidden {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+// Media
+@include tablet-l() {
+  .arrow {
+    font-size: $font-size-pagination-arrow--t;
+  }
+}

@@ -1,0 +1,47 @@
+@import 'extends';
+@import 'mixins';
+
+.pages-nav {
+  @extend %flex-center;
+  height: 3.6rem;
+}
+
+.pages-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 45rem;
+  transition:
+    right 0.2s ease,
+    left 0.2s ease;
+}
+
+.separator {
+  @extend %flex-center;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+// Media
+@include tablet-l() {
+  .pages-nav {
+    @extend %flex-center;
+    height: 5rem;
+  }
+
+  .pages-list {
+    max-width: 35rem;
+  }
+
+  .separator {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@include mobile() {
+  .pages-nav {
+    padding: 0 1rem;
+  }
+}

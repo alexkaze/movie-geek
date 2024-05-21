@@ -4,16 +4,9 @@ type PaginationState = {
   pagesQty: number;
   activePage: number;
   pagesArr: (string | number)[];
-  cleanParams: string;
-  pageClickHandler: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
+  pageClickHandler: (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => void;
 };
 
-const PaginationContext = createContext<PaginationState>({
-  pagesQty: 5,
-  activePage: 1,
-  pagesArr: [],
-  cleanParams: '',
-  pageClickHandler: () => {},
-});
+const PaginationContext = createContext<PaginationState | null>(null);
 
 export default PaginationContext;
