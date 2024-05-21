@@ -1,0 +1,6 @@
+@import 'extends';
+
+.container {
+  @extend %flex-center;
+  height: 100%;
+}
