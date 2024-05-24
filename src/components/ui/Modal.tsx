@@ -4,13 +4,14 @@ import styles from './Modal.module.scss';
 
 type Props = {
   isDisplayed: boolean;
-  modalHandler: (action: boolean) => void;
+  modalHandler: () => void;
+  className?: string;
   children?: React.ReactNode;
 };
 
 const portalElement = document.getElementById('modal-root') as HTMLDivElement;
 
-const Modal = ({ isDisplayed, modalHandler, children }: Props) => {
+const Modal = ({ className, isDisplayed, modalHandler, children }: Props) => {
   const modalStyles = isDisplayed
     ? styles.backdrop
     : `${styles.backdrop} ${styles.close}`;
@@ -20,8 +21,8 @@ const Modal = ({ isDisplayed, modalHandler, children }: Props) => {
       {createPortal(
         <div
           data-testid="backdrop"
-          className={modalStyles}
-          onClick={() => modalHandler(false)}
+          className={className ? `${modalStyles} ${className}` : modalStyles}
+          onClick={modalHandler}
         ></div>,
         portalElement
       )}

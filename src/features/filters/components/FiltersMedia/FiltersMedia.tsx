@@ -23,7 +23,7 @@ const FiltersMedia = () => {
         <Modal
           data-testid="filters-modal"
           isDisplayed={isDisplayed}
-          modalHandler={modalHandler}
+          modalHandler={() => modalHandler(false)}
         >
           <FiltersPanel />
         </Modal>
