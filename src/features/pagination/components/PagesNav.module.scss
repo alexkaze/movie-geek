@@ -26,7 +26,6 @@
 // Media
 @include tablet-l() {
   .pages-nav {
-    @extend %flex-center;
     height: 5rem;
   }
 

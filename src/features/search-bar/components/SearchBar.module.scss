@@ -1,9 +1,8 @@
 @import 'searchbar-variables';
 @import 'variables';
-@import 'extends';
 
 .searchbar {
-  @extend %flex-center;
+  display: flex;
   width: 100%;
   max-width: 64rem;
   overflow: hidden;
