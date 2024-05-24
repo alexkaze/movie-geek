@@ -1,5 +1,5 @@
 import { SelectType } from '@features/filters/types/filters-types';
-import useDisplayAnimation from '@features/filters/hooks/useDisplayAnimation';
+import useDisplayAnimation from '@hooks/useDisplayAnimation';
 
 import validateOption from './validate-option';
 
@@ -27,19 +27,19 @@ const SelectProvider = ({ selectObjData, children }: Props) => {
     isDisplayed,
     shouldRender,
     paramIsEmpty,
-    selectedOptionUI,
+    selectedOptionUI
   };
 
   const selectHandlers = {
     hideListHandler,
     toggleListHandler,
-    animationEndHandler,
+    animationEndHandler
   };
 
   const context = {
     selectData,
     selectState,
-    selectHandlers,
+    selectHandlers
   };
 
   return (

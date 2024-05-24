@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useDisplayAnimation from '@features/filters/hooks/useDisplayAnimation';
+import useDisplayAnimation from '@hooks/useDisplayAnimation';
 
 describe('useDisplayAnimation hook', () => {
   test('works with default state', () => {

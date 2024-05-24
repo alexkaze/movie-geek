@@ -21,7 +21,7 @@ const useDisplayAnimation = () => {
     isDisplayed,
     shouldRender,
     displayHandler,
-    animationEndHandler,
+    animationEndHandler
   };
 };
 

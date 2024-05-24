@@ -1,6 +1,6 @@
 import bodyScroll from '@utils/body-scroll';
 
-import useDisplayAnimation from './useDisplayAnimation';
+import useDisplayAnimation from '../../../hooks/useDisplayAnimation';
 
 const useFiltersUI = () => {
   const { isDisplayed, shouldRender, displayHandler, animationEndHandler } =
