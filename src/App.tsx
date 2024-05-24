@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { PATH_SEARCH, PATH_TOP250, PATH_POPULAR } from '@config/env-config';
 
-import Layout from './layouts/common/Layout';
+import Layout from './layouts/Layout';
 
 const MainPage = React.lazy(() => import('./pages/MainPage'));
 const SearchMoviesPage = React.lazy(() => import('./pages/SearchMoviesPage'));

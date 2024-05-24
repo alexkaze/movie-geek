@@ -1,5 +1,6 @@
 @import 'extends';
 
 .wrapper {
-  @extend %flex-center;
+  display: flex;
+  justify-content: center;
 }

@@ -1,7 +1,8 @@
 @import 'variables';
+@import 'extends';
 @import 'mixins';
 
-.page {
+.layout {
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(auto, 128rem) minmax(
@@ -16,24 +17,50 @@
     '. . .';
 
   background: $background-page;
+}
 
-  @include laptop() {
+.main {
+  grid-area: main;
+}
+
+.footer {
+  @extend %flex-center;
+  height: 6rem;
+  font-size: $font-size-footer;
+  background-color: $background-color-main;
+}
+
+// Media
+@include laptop() {
+  .layout {
     grid-template-rows: 7.5rem 6rem auto 6rem;
   }
 
-  @include tablet-l() {
+  .footer {
+    font-size: $font-size-footer--t;
+  }
+}
+
+@include tablet-l() {
+  .layout {
     grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 128rem) minmax(
         1.5rem,
         1fr
       );
     grid-template-rows: 7rem 6rem auto 6rem;
   }
+}
 
-  @include tablet-sm() {
+@include tablet-sm() {
+  .layout {
     grid-template-columns: minmax(1rem, 1fr) minmax(auto, 128rem) minmax(
         1rem,
         1fr
       );
     grid-template-rows: 6rem 4rem auto 4rem;
+  }
+
+  .footer {
+    height: 5rem;
   }
 }
