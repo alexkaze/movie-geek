@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'extends';
+@import 'mixins';
+
+.list {
+  display: flex;
+  gap: 5rem;
+}
+
+.modal {
+  top: 6rem;
+}
+
+// Media
+@include tablet-sm() {
+  .list {
+    justify-content: center;
+    align-items: center;
+    font-size: $font-navbar-list--m;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 0;
+    background-color: $background-color-main;
+    border-top: 0.1rem solid $background-color-tertiary;
+    border-radius: 0 0 2rem 2rem;
+
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    z-index: 100;
+
+    animation: slide-down 200ms ease-out forwards;
+
+    @keyframes slide-down {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.99;
+      }
+    }
+  }
+
+  .close {
+    animation: slide-up 200ms ease-out forwards;
+
+    @keyframes slide-up {
+      from {
+        opacity: 0.99;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}

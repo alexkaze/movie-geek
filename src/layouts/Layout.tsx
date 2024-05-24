@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
+import { Navbar } from '@features/navbar';
 import LoadingSpinner from '@components/ui/LoadingSpinner';
 
 import layoutStyles from './Layout.module.scss';
@@ -17,6 +18,8 @@ const Layout = () => {
                 <h1 className={headerStyles['header__logo']}>Movie Geek</h1>
               </Link>
             </div>
+
+            <Navbar />
           </div>
         </header>
 

@@ -13,9 +13,11 @@ $font-size-logo--m: 2rem;
 $font-size-footer: 2rem;
 $font-size-footer--t: 1.6rem;
 $font-size-error: 1.95rem;
+$font-navbar-list--m: 1.7rem;
 
 $font-color-main: #fff;
 $font-color-secondary: #1f1f1f;
+$font-color-navlink: #ffffffc0;
 
 $font-weight: (
   'light': 300,
@@ -23,7 +25,7 @@ $font-weight: (
   'medium': 500,
   'semiBold': 600,
   'bold': 700,
-  'extraBold': 800,
+  'extraBold': 800
 );
 
 @function weight($weight) {
